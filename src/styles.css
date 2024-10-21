@@ -1,0 +1,454 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+body {
+  font-family: 'Candara', sans-serif;
+  background-color: #0a0a0a;
+  color: #f4f0f0;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sections */
+  align-items: center; /* Align items vertically centered */
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./images/one.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Adjust the opacity as needed */
+  z-index: -1; /* Place it behind the header content */
+}
+
+.header > * {
+  position: relative; /* Ensure the header content stays above the background */
+  z-index: 1; /* Keep the content above the background */
+}
+
+.header-left {
+  display: flex; /* Use flexbox for logo and image */
+  align-items: center; /* Center items vertically */
+}
+
+.header-image {
+  margin-right: 20px; /* Add space between image and logo */
+}
+
+.header img {
+  width: 50px; /* Ensures the image scales down */
+  height: 50px;
+  border-radius: 8px;
+}
+
+.nav-buttons {
+  display: flex; /* Aligns nav buttons horizontally */
+  gap: 15px; /* Space between nav buttons */
+}
+
+.nav-button {
+  color: #ffffff; /* Adjust button color */
+  text-decoration: none; /* No underline */
+  padding: 10px 15px; /* Padding for buttons */
+  border-radius: 5px; /* Rounded corners for buttons */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Background on hover */
+}
+
+.nav {
+  display: flex; /* Make nav a flex container */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex; /* Keep the list as a flex container */
+  gap: 20px; /* Space between navigation items */
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 20px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease; /* Sliding effect */
+}
+
+.nav ul li a:hover {
+  color: #FF8C00;
+  transform: translateY(-5px); /* Slide up effect on hover */
+}
+
+/* Hero Section with Fixed Background */
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fix the background image */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero .overlay {
+  position: absolute;
+  
+}
+.hero img {
+  width: 50px; /* Ensures the image scales down */
+  height: 50px;
+  border-radius: 8px;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero h3 {
+  padding: 2.5rem;
+  font-family: 'Candara', sans-serif;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FF8C00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #e68a00;
+  transform: translateY(-3px); /* Button slide up effect on hover */
+}
+
+/* About Section */
+.about {
+  padding: 200px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./images/one.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column; /* Default to column for smaller screens */
+  align-items: center; /* Center items */
+  justify-content: center; /* Center vertically */
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(37, 37, 37, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.about-image img {
+  width: 100%; /* Make the image responsive */
+  max-width: 300px; /* Limit the max width */
+  height: auto; /* Adjust height automatically */
+  border-radius: 8px;
+  margin-bottom: 20px; /* Space below image on smaller screens */
+}
+
+.about-text {
+  max-width: 600px; /* Limit text width */
+  text-align: center; /* Center text for smaller screens */
+}
+
+.about-text h1 {
+  font-size: 36px; /* Adjusted font size */
+  color: #FF8C00;
+  margin-bottom: 20px;
+}
+
+.about-text h3 {
+  font-size: 22px; /* Adjusted font size */
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (min-width: 770px) {
+  .about-container {
+    flex-direction: row; /* Switch to row layout on larger screens */
+  }
+
+  .about-image img {
+    margin-right: 40px; /* Add space on the right for larger screens */
+    margin-bottom: 0; /* Reset bottom margin */
+  }
+
+  .about-text {
+    text-align: left; /* Align text to the left on larger screens */
+  }
+
+  .about-text h1 {
+    font-size: 40px; /* Increase font size for larger screens */
+  }
+
+  .about-text h3 {
+    font-size: 24px; /* Increase font size for larger screens */
+  }
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 100px 20px;
+  text-align: center;
+  background-image: url('./images/one.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+}
+
+.portfolio h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #FF8C00;
+}
+
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between items */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.portfolio-item {
+  display: flex; /* Align image and description side by side */
+  flex-direction: row; /* Default direction */
+  align-items: center; /* Center items vertically */
+  background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for items */
+  border-radius: 10px;
+  padding: 10px; /* Padding around the item */
+  max-width: 700px; /* Set a max width for each item */
+  width: 100%; /* Full width in flex container */
+  height: 400px; /* Set a height for the items */
+}
+
+.portfolio-container img {
+  width: 400px; /* Adjust width of the image */
+  height: 300px; /* Adjust height of the image */
+  object-fit: cover; /* Ensure images maintain aspect ratio */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-container img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.portfolio-description {
+  margin-left: 20px; /* Space between image and description */
+  text-align: left; /* Align text to the left */
+}
+
+.portfolio-description h3 {
+  margin: 0; /* Remove default margin */
+  color: #FF8C00; /* Title color */
+}
+
+.portfolio-description p {
+  margin: 5px 0 0; /* Space for the paragraph */
+  color: #ffffff; /* Description text color */
+}
+
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+ /* Modal Styles */
+ .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-content img {
+  margin-left: 10rem;
+  max-width: 80%;
+  max-height: 90%;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 5rem;
+  background: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Contact Section */
+.contact {
+  background-image: url('./images/one.jpg'); 
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex; /* Use flex to center content */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 100vh; /* Ensure it takes the full viewport height */
+  padding: 2rem; /* Add padding around the content if needed */
+}
+
+.contact h2 {
+  font-size: 40px;
+  margin: 0; /* Reset margins for better control */
+  margin-bottom: 5rem; /* Adjust this value as needed */
+  color: #FF8C00; /* Title color */
+}
+
+.contact-description {
+  margin-bottom: 4rem; /* Adjust this value as needed */
+  padding: 0 1rem; /* Optional: Add padding for mobile responsiveness */
+}
+
+.socials {
+  margin-bottom: 4rem;
+}
+.socials a {
+  display: inline-block;
+  padding: 10px 20px; /* Padding for button-like appearance */
+  margin: 0 10px; /* Adjust margin for spacing */
+  font-size: 20px; /* Font size for button text */
+  color: #ffffff; /* Text color */
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+  border: 2px solid #FF8C00; /* Border color matching text */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.socials a:hover {
+  background-color: #FF8C00; /* Change background on hover */
+  color: #ffffff; /* Change text color on hover */
+}
+
+.socials img {
+  width: 20px;
+  margin-right: 5px; /* Space between icon and text */
+  vertical-align: middle;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Reduce gap for smaller screens */
+  }
+
+  .socials a {
+    font-size: 16px; /* Slightly smaller font size */
+    padding: 8px 16px; /* Adjust padding */
+  }
+
+  .contact-section {
+    padding: 20px; /* Reduced padding on smaller screens */
+  }
+
+  .contact-section h2 {
+    font-size: 28px; /* Smaller font size for header */
+  }
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #000000;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 20px; /* Space between content and footer */
+}
+
+  .contact-section {
+    padding: 20px; /* Reduced padding on smaller screens */
+  }
+
+  .contact-section h2 {
+    font-size: 28px; /* Smaller font size for header */
+  }
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #000000;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 20px; /* Space between content and footer */
+}
